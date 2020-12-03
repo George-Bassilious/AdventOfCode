@@ -26,10 +26,13 @@ def solution2():
     count=0
     for [n1,n2,c,word] in numbersList:
 
-        valid1= word[int(n1)-1] == c and c != word[int(n2)-1]
-        valid1s= word[int(n1)-1] != c and c == word[int(n2)-1]
-        valid2= word[int(n1)-1] != c and c != word[int(n2)-1]
-        valid3= word[int(n1)-1] == c and c == word[int(n2)-1]
+        pos1= word[int(n1)-1]
+        pos2= word[int(n2)-1]
+
+        valid1= pos1 == c and c != pos2
+        valid1s= pos1 != c and c == pos2
+        valid2= pos1 != c and c != pos2
+        valid3= pos1 == c and c == pos2
         
        
         if valid1 or valid1s and not (valid2 and valid3):
