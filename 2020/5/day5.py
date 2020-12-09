@@ -1,10 +1,9 @@
 
 
-text = open('input', 'r').read().splitlines()
-
+inputData = open('input', 'r').read().splitlines()
 boardingPasses=[]
 
-def tester(input):
+def Calculate_seat_id(input):
     a = list(range(127+1))
     b= list(range(7+1))
 
@@ -17,12 +16,20 @@ def tester(input):
             b=b[int(len(b)/2):]
         if l== 'L':
             b=b[:int(len(b)/2)]
-    
         
     input = (a[0],b[0])
 
-    return input
+    return calculate_id(input)
 
+def calculate_id(input):
+    (row,col)=input
+    return (row*8)+col
+
+
+
+def solution1():
+    for boarding_pass in inputData: boardingPasses.append(Calculate_seat_id(boarding_pass))
+    return max(boardingPasses)
 
 def solution2():
     diff=list(set(range(905))-set(boardingPasses))
@@ -30,23 +37,6 @@ def solution2():
 
 
 
-
-def solution1():
-    max_seat_id=0
-    
-    for boarding_pass in text:
-        
-        x= calculate_seat_id(tester(boarding_pass))
-        boardingPasses.append(x)
-
-        if  x > max_seat_id:
-            max_seat_id= x
-
-    return max_seat_id
-
-def calculate_seat_id(input):
-    (row,col)=input
-    return (row*8)+col
 
 if __name__ == '__main__':
     print(solution1())
