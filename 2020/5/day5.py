@@ -30,8 +30,7 @@ def solution1():
 
 def solution2():
     diff=list(set(range(solution1()))-set(boardingPasses))
-    return diff[-1:][0]
-
+    return diff[-1]
 
 if __name__ == '__main__':
     print(solution1())
