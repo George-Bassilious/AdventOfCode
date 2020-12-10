@@ -8,10 +8,8 @@ def solution1():
         
         while n in ([x+y for (x,y) in list((itertools.product(list1,repeat=2))) if x!=y]):
             list1.pop(0)
-            list1.append(n)
-            
+            list1.append(n)   
             n = int(f.readline())
-           
 
         return n
 
