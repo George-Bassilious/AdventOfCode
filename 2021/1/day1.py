@@ -1,8 +1,6 @@
 file1 = open('inputs/day1', 'r') 
 numbersList = list(map(int, file1.readlines()))
 
-
-
 def solution1():
     count=-1
     mem=-1
@@ -12,7 +10,6 @@ def solution1():
         mem= i
 
     print("Answer 1: ", count)
-
 
 def solution2():
     count=-1
@@ -27,7 +24,6 @@ def solution2():
 
 solution1()
 solution2()
-
 
 #This code was taken from https://github.com/IanFindlay/advent-of-code/blob/master/2021/day_01.py
 def idealSolution ():
