@@ -1,0 +1,4 @@
+*.txt
+*input*
+
+!Templates/python/x/*.txt
